@@ -1,0 +1,42 @@
+{% extends "web_parts/master.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/profile.css' %}">
+   <div class="main-content">
+
+    <div>
+        <h1>Profil</h1>
+        <h2>Uživatelské jméno: {{ user.username }}</h2>
+        <p>Jméno a příjmení: {{ user.first_name }} {{ user.last_name }}</p>
+        <p>email: {{ user.email }}</p>
+        <a href="{% url 'change_password' %}"><button>Změnit heslo</button></a>
+        {% if perms.users.delete_user %}
+            <a href="{% url 'users_list' %}"><button>Seznam registrovných klientů</button></a>
+        {% endif %}
+    </div>
+    <div>
+         <ul>
+            <li>
+                <p>Rezervace termínu</p>
+                <a href="{% url 'reservation' %}">
+                    <img src="{% static 'users/img/rezervace_terminu.jpeg' %}" alt="prázné lehátko"
+                         style="max-width: 300px; max-height: 300px;">
+                </a>
+            </li>
+            <li>
+                <p>Moje rezervace</p>
+                <a href="{% url 'my_reservations' %}">
+                    <img src="{% static 'users/img/moje_rezervace.jpeg' %}" alt="obsazené lehátko"
+                         style="max-width: 300px; max-height: 300px;">
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

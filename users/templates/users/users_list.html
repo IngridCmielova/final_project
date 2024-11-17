@@ -1,0 +1,41 @@
+{% extends "web_parts/master.html" %}
+
+{% block title %}
+    Seznam registrovaných klientů
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'salon_ingrid_api/css/price_list.css' %}">
+    <h1>Seznam registrovaných klientů</h1>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Uživatelské jméno</th>
+                    <th>Jméno</th>
+                    <th>Příjmení</th>
+                    <th>E-mail</th>
+                    <th>Poslední přihlášení</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.last_name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            {% if user.last_login %}
+                                {{ user.last_login|date:"d.m.Y H:i" }}
+                            {% else %}
+                                Nikdy nepřihlášen
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

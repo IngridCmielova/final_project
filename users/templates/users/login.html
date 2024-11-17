@@ -1,0 +1,17 @@
+{% extends "web_parts/master.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Přihlásit</button>
+    </form>
+    <small>
+        Chete si založit účet? --> <a href="{% url 'register' %}">Založit účet</a>
+    </small>
+{% endblock %}
