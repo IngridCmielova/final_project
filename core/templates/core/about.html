@@ -1,0 +1,35 @@
+{% extends 'web_parts/master.html' %}
+{% load static %}
+
+{% block title %}
+    O mě
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/core/css/about.css' %}">
+    <section>
+        <div>
+            <h1>O mě</h1>
+            <article>
+                <p>Svět krásy a líčení mě přitahoval už od dětství – experimentování s
+                barvami a technikami pro mě bylo vždy více než jen zábava.</p>
+                <p>Před 8 lety jsem svůj koníček proměnila v
+                práci a začala se specializovat zejména na svatební líčení. Stát se součástí tak výjimečného dne je
+                pro mě pocta, a proto si na každém detailu dávám velmi záležet, aby se nevěsta cítila nádherně a
+                sebevědomě.</p>
+                <p>V průběhu let jsem svou nabídku dále rozšířila o tradiční kosmetická ošetření a v mém salonu dnes nabízím
+                také procedury jako lash lifting a laminaci obočí. Úprava obočí je mou srdeční záležitostí – věřím,
+                že dobře upravené obočí dokáže proměnit celý výraz a podtrhnout přirozenou krásu.</p>
+                <p>Pro kosmetická ošetření používám vysoce kvalitní španělskou značku <b>Bruno Vassari</b>, která
+                přináší nejen luxusní péči, ale také výsledky, na které se můžete spolehnout.</p>
+                <p>Mým cílem je, aby se každá žena cítila
+                nejen krásná, ale i odpočinutá a svěží. Těším se na každou návštěvu a na možnost být součástí vaší cesty k
+                dokonalé kráse, ať už jde o váš svatební den nebo chvilku zasloužené péče pro vás samotnou.</p>
+            </article>
+        </div>
+        <div>
+            <img src="{% static 'img/about.png' %}" alt="Já v salónu" style="max-width: 500px; max-height: 500px;">
+        </div>
+    </section>
+{% endblock %}

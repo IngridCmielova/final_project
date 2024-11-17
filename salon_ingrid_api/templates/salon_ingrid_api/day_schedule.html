@@ -1,0 +1,26 @@
+{% extends 'web_parts/master.html' %}
+
+{% block title %} Rozpis pro {{ selected_date }} - {{ procedure.name }}{% endblock %}
+
+
+{% block content %}
+
+    <h1>Rozpis hodin pro {{ selected_date }} - {{ procedure.name }}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <ul>
+            {% for slot in schedule %}
+                <li>
+                    {{ slot.hour|time:"H:i" }} - {{ slot.status }}
+                    {% if slot.status == 'Volné' %}
+                        <input type="checkbox" name="selected_hours" value="{{ slot.hour.hour }}">
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Rezervovat vybrané časy</button>
+    </form>
+    <br>
+    <a href="{% url 'reservation' %}"><button>Zpět na výběr data a procedury</button></a>
+{% endblock %}

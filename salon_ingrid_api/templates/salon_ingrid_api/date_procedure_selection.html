@@ -1,0 +1,15 @@
+{% extends 'web_parts/master.html' %}
+
+{% block title %}Výběr Data a Procedury{% endblock %}
+
+{% block content %}
+
+    <h1>Vyberte datum a proceduru</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Zobrazit rozpis</button>
+    </form>
+    <br>
+    <a href="/profile"><button>Zpět na profil</button></a>
+{% endblock %}

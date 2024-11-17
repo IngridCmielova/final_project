@@ -1,0 +1,31 @@
+<nav>
+    <ul>
+        <li>
+            <a href="{% url 'home' %}">Úvodní stránka</a>
+        </li>
+        <li>
+            <a href="{% url 'about' %}">O mě</a>
+        </li>
+        <li>
+            <a href="{% url 'price_list' %}">Ceník</a>
+        </li>
+        {% if user.is_authenticated %}
+            <li>
+                <a href="{% url 'profile' %}">Profil</a>
+            </li>
+            <li>
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Odhlásit">
+                </form>
+            </li>
+        {% else %}
+            <li>
+                <a href="{% url 'login' %}">Přihlášení</a>
+            </li>
+            <li>
+                <a href="{% url 'register' %}">Založit účet</a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>

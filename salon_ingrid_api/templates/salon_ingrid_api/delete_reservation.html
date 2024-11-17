@@ -1,0 +1,17 @@
+{% extends 'web_parts/master.html' %}
+
+{% block title %}
+    Zrušení rezervace
+{% endblock %}
+
+{% block content %}
+    <h1>Opravdu chcete smazat tuto rezervaci?</h1>
+    <h2>{{ reservation.date }} - {{ reservation.procedure.name }} - {{ reservation.time|time:"H:i" }}</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        <button type="submit">Potvrdit zrušení</button>
+    </form>
+    <br>
+    <a href="{% url 'my_reservations' %}"><button>Zpět na seznam rezervací</button></a>
+    <br>
+{% endblock %}

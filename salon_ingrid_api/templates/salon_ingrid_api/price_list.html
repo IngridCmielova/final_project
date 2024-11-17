@@ -1,0 +1,131 @@
+{% extends 'web_parts/master.html' %}
+
+{% block title %}
+    Ceník
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'salon_ingrid_api/css/price_list.css' %}">
+    <div calss="container">
+        <h1>Ceník služeb</h1>
+
+        <table>
+            <tr class="section-header">
+                <th colspan="2">Celkové ošetření obličeje a dekoltu (s masáží)</th>
+            </tr>
+            <tr>
+                <td>(ošetření na míru dle potřeb vaší pleti, včetně hloubkového čištění, masáže obličeje a dekoltu a parafínového zábalu rukou) - 90 minut</td>
+                <td>1.200 Kč / 1.500 Kč</td>
+            </tr>
+            <tr class="section-header">
+                <th colspan="2">Celkové ošetření obličeje a dekoltu (bez masáže)</th>
+            </tr>
+            <tr>
+                <td>(ošetření na míru dle potřeb vaší pleti, včetně hloubkového čištění) - 60 minut</td>
+                <td>900 Kč / 1.100 Kč</td>
+            </tr>
+            <tr>
+                <td colspan="2">*součástí celkového ošetření je i úprava obočí/barvení řas/depilace horního rtu dle přání klienta.</td>
+            </tr>
+
+            <tr class="section-header">
+                <th colspan="2">Teenage ošetření (mladistvá pleť)</th>
+            </tr>
+            <tr>
+                <td>(odlíčení, zjemnění pleti, hloubkové čištění, zklidňující maska, závěrečný krém)</td>
+                <td>790 Kč</td>
+            </tr>
+
+            <tr class="section-header">
+                <th colspan="2">Řasy & Obočí</th>
+            </tr>
+            <tr>
+                <td>Lash Lifting + Lash Botox</td>
+                <td>850 Kč</td>
+            </tr>
+            <tr>
+                <td>Laminace obočí s barvením</td>
+                <td>800 Kč</td>
+            </tr>
+            <tr>
+                <td>Úprava a barvení obočí (v rámci ošetření pokud již není v ceně/samostatně)</td>
+                <td>150 Kč / 250 Kč</td>
+            </tr>
+            <tr>
+                <td>Úprava obočí a barvení - BROW CODE (efekt henny)</td>
+                <td>330 Kč</td>
+            </tr>
+            <tr>
+                <td>Barvení řas (v rámci ošetření/samostatně)</td>
+                <td>100 Kč / 150 Kč</td>
+            </tr>
+
+            <tr class="section-header">
+                <th colspan="2">Epilace voskem</th>
+            </tr>
+            <tr>
+                <td>Horní ret/brada/oblast pupku</td>
+                <td>70 Kč</td>
+            </tr>
+            <tr>
+                <td>Celý obličej</td>
+                <td>270 Kč</td>
+            </tr>
+            <tr>
+                <td>Třísla/podpaží</td>
+                <td>200 Kč</td>
+            </tr>
+
+            <tr class="section-header">
+                <th colspan="2">Epilace cukrovou pastou</th>
+            </tr>
+            <tr>
+                <td>Nohy: po kolena/celé</td>
+                <td>350 Kč / 550 Kč</td>
+            </tr>
+            <tr>
+                <td>Ruce: po loket/celé</td>
+                <td>250 Kč / 400 Kč</td>
+            </tr>
+            <tr>
+                <td>Hrudník</td>
+                <td>od 350 Kč</td>
+            </tr>
+            <tr>
+                <td>Záda</td>
+                <td>od 550 Kč</td>
+            </tr>
+
+            <tr class="section-header">
+                <th colspan="2">Líčení</th>
+            </tr>
+            <tr>
+                <td>Denní líčení (po ošetření)</td>
+                <td>300 Kč</td>
+            </tr>
+            <tr>
+                <td>Večerní/slavnostní líčení</td>
+                <td>550 Kč</td>
+            </tr>
+            <tr>
+                <td>Svatební líčení (včetně zkoušky)</td>
+                <td>1.500 Kč</td>
+            </tr>
+            <tr>
+                <td>Lepení řas v rámci líčení</td>
+                <td>150 Kč</td>
+            </tr>
+
+            <tr class="section-header">
+                <th colspan="2">Individuální kurz líčení (3,5 - 4 h)</th>
+            </tr>
+            <tr>
+                <td colspan="2">3.000 Kč</td>
+            </tr>
+            <tr>
+                <td colspan="2">Pokud líčení probíhá v místě kosmetický salon, jsou k ceně líčení připočítaný náklady na cestu (od 100 Kč)</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

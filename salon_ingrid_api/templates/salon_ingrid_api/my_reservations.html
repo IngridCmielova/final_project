@@ -1,0 +1,35 @@
+{% extends "web_parts/master.html" %}
+
+{% block title %}
+    Seznam rezervací
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'salon_ingrid_api/css/price_list.css' %}">
+    <h1>Seznam rezervací</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Datum</th>
+                <th>Čas</th>
+                <th>Popis</th>
+                <th>Procedura</th>
+                <th>Uživatel</th>
+                <th>Zrušit rezervaci</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reservation in reservations %}
+                <tr>
+                    <td>{{ reservation.date }}</td>
+                    <td>{{ reservation.time }}</td>
+                    <td>{{ reservation.description }}</td>
+                    <td>{{ reservation.procedure.name }}</td>
+                    <td>{{ reservation.user.username }}</td>
+                    <td><a href="{% url 'delete_reservation' pk=reservation.id %}"><button>Zrušit</button></a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

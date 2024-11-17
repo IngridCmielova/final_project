@@ -1,0 +1,48 @@
+{% extends 'web_parts/master.html' %}
+{% load static %}
+
+{% block title %}
+    Úvodní stránka
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/core/css/home.css' %}">
+    <h1>Salón Ingrid</h1>
+    <h2>Vítám Vás na svých stránkách!</h2>
+    <div class="main content" style="display: flex; width: 100%">
+        <div class="box">
+            <h3>O mě</h3>
+            <article>
+                <p>O tom jak se z dětského experimentování stala
+                    vášeň na celý život, ale také poskytovaných
+                    službách a používané kosmetice se dozvite vice
+                    v sekci <a href="{%url 'about' %}">o mě.</a> </p>
+            </article>
+        </div>
+        <div class="box">
+            <h3>Objednávky:</h3>
+            <ul>
+                <li>Email: ingrid@cmielova.cz</li>
+                <li>Telefon: 123 456 789</li>
+                <li>Pro registrované v sekci profil</li>
+            </ul>
+        </div>
+        <div class="box">
+            <h3>Provozní doba</h3>
+            <ul>
+                <li>Pondělí - Pátek</li>
+                <li>9:00 - 16:00</li>
+                <li>Mino tuto dobu po telefonické dohodě</li>
+            </ul>
+        </div>
+        <div class="box">
+            <h3>Adresa provozovny</h3>
+            <ul>
+                <li>Jablůnkovská 1</li>
+                <li>Jablůnkov</li>
+                <li>739 75</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
